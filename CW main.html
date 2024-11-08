@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CubeWare</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(45deg, blue, purple);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .nav-options {
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            display: none;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .nav-options a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: opacity 0.5s ease;
+        }
+
+        .nav-options a:hover {
+            opacity: 0.7;
+        }
+
+        .intro {
+            text-align: center;
+            position: relative;
+            top: 40vh;
+            transform: translateY(-50%);
+            z-index: 5;
+        }
+
+        .intro p.introducing {
+            font-size: 24px;
+            animation: colorChange 2s infinite;
+        }
+
+        @keyframes colorChange {
+            0% { color: #3399FF; }
+            50% { color: #66B2FF; }
+            100% { color: #3399FF; }
+        }
+
+        .intro h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, pink, blue, purple);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro p.exploit {
+            font-size: 24px;
+            background: linear-gradient(45deg, white, red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .square {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, pink, purple);
+            opacity: 0.6;
+            animation: float 8s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .square:nth-child(2) { animation-delay: 2s; }
+        .square:nth-child(3) { animation-delay: 4s; }
+        .square:nth-child(4) { animation-delay: 6s; }
+        .square:nth-child(5) { animation-delay: 8s; }
+
+        .square1 { top: 10%; left: 20%; }
+        .square2 { top: 30%; left: 70%; }
+        .square3 { top: 50%; left: 40%; }
+        .square4 { top: 70%; left: 10%; }
+        .square5 { top: 90%; left: 80%; }
+    </style>
+    <script>
+        // Toggle navigation menu
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-options');
+            menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'flex' : 'none';
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">CW TEAM</div>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    </header>
+
+    <div class="nav-options">
+        <a href="#get-scripts">Get Scripts</a>
+        <a href="#premium">Premium</a>
+    </div>
+
+    <div class="intro">
+        <p class="introducing">Introducing</p>
+        <h1>CubeWare</h1>
+        <p class="exploit">Next Gen exploit</p>
+    </div>
+
+    <div class="square square1"></div>
+    <div class="square square2"></div>
+    <div class="square square3"></div>
+    <div class="square square4"></div>
+    <div class="square square5"></div>
+
+</body>
+</html>
